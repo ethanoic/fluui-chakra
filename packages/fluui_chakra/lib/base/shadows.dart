@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'ui_colors.dart';
 
-class Box {
+class Shadows {
   static const xs = BoxShadow(
     color: UiColors.blackAlpha5,
     blurRadius: 0,
@@ -79,7 +79,7 @@ class Box {
     ),
   ];
 
-  static const xl2 = BoxShadow(
+  static const xxl = BoxShadow(
     color: UiColors.blackAlpha25,
     blurRadius: 50,
     spreadRadius: -12,

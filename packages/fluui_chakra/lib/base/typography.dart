@@ -168,35 +168,35 @@ class ComponentText {
 
   static const lineHeight = 1.5;
 
-  static const xl6 = TextStyle(
+  static const xxxxxxl = TextStyle(
     fontFamily: Typography.fontFamily,
     fontWeight: Typography.fontWeightBold,
     fontSize: 60.0,
     height: lineHeight,
   );
 
-  static const xl5 = TextStyle(
+  static const xxxxxl = TextStyle(
     fontFamily: Typography.fontFamily,
     fontWeight: Typography.fontWeightBold,
     fontSize: 48.0,
     height: lineHeight,
   );
 
-  static const xl4 = TextStyle(
+  static const xxxxl = TextStyle(
     fontFamily: Typography.fontFamily,
     fontWeight: Typography.fontWeightBold,
     fontSize: 36.0,
     height: lineHeight,
   );
 
-  static const xl3 = TextStyle(
+  static const xxxl = TextStyle(
     fontFamily: Typography.fontFamily,
     fontWeight: Typography.fontWeightBold,
     fontSize: 30.0,
     height: lineHeight,
   );
 
-  static const xl2 = TextStyle(
+  static const xxl = TextStyle(
     fontFamily: Typography.fontFamily,
     fontWeight: Typography.fontWeightBold,
     fontSize: 24.0,
