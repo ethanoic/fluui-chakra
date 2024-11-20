@@ -1,0 +1,19 @@
+name: fluui_chakra
+
+packages:
+  - packages/**
+  - apps/**
+
+scripts:
+  analyze:
+    exec: dart analyze .
+
+  run:widgetbook:
+    select-package:
+      flutter: true
+    run: melos exec --scope="*widgetbook*" -- flutter run -d chrome
+
+  build:fluui_chakra:
+    select-package:
+      flutter: true
+    run: melos exec --scope="*fluui_chakra*" -- flutter build web
