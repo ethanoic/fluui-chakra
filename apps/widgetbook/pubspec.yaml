@@ -23,3 +23,8 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: ../../packages/fluui_chakra/fonts/Inter-VariableFont_opsz_wght.ttf

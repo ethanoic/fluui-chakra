@@ -8,23 +8,27 @@ class UiColors {
   static const transparent = Colors.transparent;
 
   static const whiteAlpha = MaterialColor(0xFFFFFFFF, {
-    50: Color.fromRGBO(255, 255, 255, 0.04),
-    100: Color.fromRGBO(255, 255, 255, 0.06),
-    300: Color.fromRGBO(255, 255, 255, 0.16),
-    400: Color.fromRGBO(255, 255, 255, 0.24),
-    600: Color.fromRGBO(255, 255, 255, 0.48),
-    700: Color.fromRGBO(255, 255, 255, 0.64),
-    800: Color.fromRGBO(255, 255, 255, 0.80),
+    50: Color(0X0AFFFFFF),
+    100: Color(0X0DFFFFFF),
+    200: Color(0X14FFFFFF),
+    300: Color(0X29FFFFFF),
+    400: Color(0X3DFFFFFF),
+    600: Color(0X7AFFFFFF),
+    700: Color(0XA3FFFFFF),
+    900: Color(0XEBFFFFFF),
   });
 
   static const blackAlpha = MaterialColor(0xFF000000, {
-    50: Color.fromRGBO(0, 0, 0, 0.04),
-    100: Color.fromRGBO(0, 0, 0, 0.06),
-    300: Color.fromRGBO(0, 0, 0, 0.16),
-    400: Color.fromRGBO(0, 0, 0, 0.24),
-    600: Color.fromRGBO(0, 0, 0, 0.48),
-    700: Color.fromRGBO(0, 0, 0, 0.64),
-    900: Color.fromRGBO(0, 0, 0, 0.92),
+    50: Color(0X0A000000),
+    100: Color(0X0F000000),
+    200: Color(0X14000000),
+    300: Color(0X29000000),
+    400: Color(0X3D000000),
+    500: Color(0X5C000000),
+    600: Color(0X7A000000),
+    700: Color(0XA3000000),
+    800: Color(0XCC000000),
+    900: Color(0XEB000000),
   });
 
   static const gray = MaterialColor(0xFFF7FAFC, {
@@ -41,16 +45,16 @@ class UiColors {
   });
 
   static const red = MaterialColor(0xFFFFF5F5, {
-    50: Color(0xFFFED7D7),
-    100: Color(0xFFFEB2B2),
-    200: Color(0xFFFC8181),
-    300: Color(0xFFF56565),
-    400: Color(0xFFE53E3E),
-    500: Color(0xFFC53030),
-    600: Color(0xFF9B2C2C),
-    700: Color(0xFF742A2A),
-    800: Color(0xFF642626),
-    900: Color(0xFF4A1D1D),
+    50: Color(0xFFFFF5F5),
+    100: Color(0xFFFED7D7),
+    200: Color(0xFFFEB2B2),
+    300: Color(0xFFFC8181),
+    400: Color(0xFFF56565),
+    500: Color(0xFFE53E3E),
+    600: Color(0xFFC53030),
+    700: Color(0xFF9B2C2C),
+    800: Color(0xFF822727),
+    900: Color(0xFF63171B),
   });
 
   static const orange = MaterialColor(0xFFFFFAF0, {
@@ -157,12 +161,12 @@ class UiColors {
     900: Color(0xFF521B41),
   });
 
-  static const blackAlpha4 = Color(0x04000000);
+  static const blackAlpha4 = Color(0x0A000000);
   static const blackAlpha5 = Color(0x0D000000);
   static const blackAlpha6 = Color(0x0F000000);
   static const blackAlpha10 = Color(0x1A000000);
-  static const blackAlpha20 = Color(0x14000000);
-  static const blackAlpha25 = Color(0x19000000);
-  static const blackAlpha40 = Color(0x28000000);
-  static const outline60 = Color(0x3C3F99E1);
+  static const blackAlpha20 = Color(0x33000000);
+  static const blackAlpha25 = Color(0x40000000);
+  static const blackAlpha40 = Color(0x66000000);
+  static const outline60 = Color(0x993F99E1);
 }
