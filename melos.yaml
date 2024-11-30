@@ -13,6 +13,11 @@ scripts:
       flutter: true
     run: melos exec --scope="*widgetbook*" -- flutter run -d chrome
 
+  generate:icons:
+    select-package:
+      flutter: true
+    run: melos exec --scope="*fluui_chakra*" -- flutter pub run icon_font_generator:generator --config-file=icon_font_generator.yaml
+
   build:fluui_chakra:
     select-package:
       flutter: true

@@ -1,0 +1,15 @@
+icon_font:
+  input_svg_dir: "inputs/icons"
+  output_font_file: "icons/fluui_icons.otf"
+  
+  output_class_file: "lib/base/fluui_icons.dart"
+  class_name: "FluuiIcons"
+  package: fluui_chakra
+  format: true
+
+  font_name: "Flutter ChakraUI Icons"
+  normalize: true
+  ignore_shapes: true
+
+  recursive: true
+  verbose: false

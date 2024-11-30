@@ -28,3 +28,9 @@ flutter:
     - family: Inter
       fonts:
         - asset: ../../packages/fluui_chakra/fonts/Inter-VariableFont_opsz_wght.ttf
+    - family: Noto
+      fonts:
+        - asset: ../../packages/fluui_chakra/fonts/NotoSans-VariableFont_wdth,wght.ttf
+    - family: Flutter ChakraUI Icons
+      fonts:
+        - asset: ../../packages/fluui_chakra/icons/fluui_icons.otf

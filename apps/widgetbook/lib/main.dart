@@ -7,6 +7,7 @@ import 'directories.dart';
 // Add these theme definitions before the WidgetbookApp class
 final ThemeData yourMaterialLightTheme = ThemeData(
   useMaterial3: true,
+  fontFamily: 'Inter',
   brightness: Brightness.light,
   scaffoldBackgroundColor: Colors.white,
   colorScheme: ColorScheme.fromSeed(
@@ -17,6 +18,7 @@ final ThemeData yourMaterialLightTheme = ThemeData(
 
 final ThemeData yourMaterialDarkTheme = ThemeData(
   useMaterial3: true,
+  fontFamily: 'Inter',
   brightness: Brightness.dark,
   scaffoldBackgroundColor: Colors.black,
   colorScheme: ColorScheme.fromSeed(

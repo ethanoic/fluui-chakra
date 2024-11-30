@@ -3,6 +3,8 @@ import 'colors.dart';
 import 'typography.dart';
 import 'shadows.dart';
 import 'radii.dart';
+import 'spacing.dart';
+import 'icons.dart';
 
 final baseFolder = WidgetbookFolder(
   name: 'Base',
@@ -33,6 +35,20 @@ final baseFolder = WidgetbookFolder(
       useCase: WidgetbookUseCase(
         name: 'UI Radii',
         builder: buildRadii,
+      ),
+    ),
+    WidgetbookLeafComponent(
+      name: 'UI Spacing',
+      useCase: WidgetbookUseCase(
+        name: 'UI Spacing',
+        builder: buildSpacing,
+      ),
+    ),
+    WidgetbookLeafComponent(
+      name: 'UI Icons',
+      useCase: WidgetbookUseCase(
+        name: 'UI Icons',
+        builder: buildIcons,
       ),
     ),
   ],

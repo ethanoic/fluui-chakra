@@ -15,6 +15,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  icon_font_generator: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -32,6 +33,14 @@ flutter:
         - asset: fonts/Inter-VariableFont_opsz_wght.ttf
         - asset: fonts/Inter-Italic-VariableFont_opsz_wght.ttf
           style: italic
+    - family: Noto
+      fonts:
+        - asset: fonts/NotoSans-VariableFont_wdth,wght.ttf
+        - asset: fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf
+          style: italic
+    - family: Flutter ChakraUI Icons
+      fonts:
+        - asset: icons/fluui_icons.otf
 
   # To add assets to your package, add an assets section, like this:
   # assets:
@@ -64,4 +73,3 @@ flutter:
   # For details regarding fonts in packages, see
   # https://flutter.dev/to/font-from-package
 
-        
