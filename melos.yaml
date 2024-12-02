@@ -8,6 +8,11 @@ scripts:
   analyze:
     exec: dart analyze .
 
+  bootstrap:
+    hooks:
+      post: generate:icons
+
+
   run:widgetbook:
     select-package:
       flutter: true

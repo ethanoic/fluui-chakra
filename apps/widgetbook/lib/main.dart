@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluui_chakra/fluui_chakra.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
@@ -47,23 +48,22 @@ class WidgetbookApp extends StatelessWidget {
           themes: [
             WidgetbookTheme(
               name: 'Light',
-              data: yourMaterialLightTheme,
+              data: FluuiTheme.fluuiLightTheme,
             ),
             WidgetbookTheme(
               name: 'Dark',
-              data: yourMaterialDarkTheme,
+              data: FluuiTheme.fluuiDarkTheme,
             ),
           ],
         )
       ],
       appBuilder: (context, child) {
         return MaterialApp(
-          theme: yourMaterialLightTheme,
+          theme: FluuiTheme.fluuiLightTheme,
           debugShowCheckedModeBanner: false,
           color: const Color(0XFFFFFFFF),
           home: SafeArea(
             child: Scaffold(
-              backgroundColor: const Color(0XFFFFFFFF),
               body: child,
               resizeToAvoidBottomInset: false,
             ),

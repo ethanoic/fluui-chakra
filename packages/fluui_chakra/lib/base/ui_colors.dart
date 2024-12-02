@@ -13,8 +13,10 @@ class UiColors {
     200: Color(0X14FFFFFF),
     300: Color(0X29FFFFFF),
     400: Color(0X3DFFFFFF),
+    500: Color(0X5CFFFFFF),
     600: Color(0X7AFFFFFF),
     700: Color(0XA3FFFFFF),
+    800: Color(0XCCFFFFFF),
     900: Color(0XEBFFFFFF),
   });
 

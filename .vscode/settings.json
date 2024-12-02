@@ -9,5 +9,6 @@
     "xxxxl",
     "xxxxxl",
     "xxxxxxl"
-  ]
+  ],
+  "java.compile.nullAnalysis.mode": "disabled"
 }

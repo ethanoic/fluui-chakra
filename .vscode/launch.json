@@ -28,7 +28,8 @@
       "name": "widgetbook",
       "cwd": "apps/widgetbook",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "flutterMode": "debug"
     },
     {
       "name": "widgetbook (profile mode)",
