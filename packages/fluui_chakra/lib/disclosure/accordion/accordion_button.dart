@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluui_chakra/disclosure/accordion/accordion_icon_button.dart';
+import 'package:fluui_chakra/fluui_chakra.dart';
 
 class AccordionButton extends StatelessWidget {
   const AccordionButton({
@@ -19,8 +20,11 @@ class AccordionButton extends StatelessWidget {
   ) {
     return Row(
       children: [
-        Text(
-          label,
+        Expanded(
+          child: Text(
+            label,
+            // style: Theme.of(context).extension<FluuiTextTheme>()!,
+          ),
         ),
         AccordionIconButton(
           isOpen: isOpen,

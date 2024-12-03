@@ -22,6 +22,7 @@ class FluuiTheme {
       FluuiTextTheme.light(
         colorScheme: lightColorScheme,
       ),
+      FluuiColorTheme.light(),
     ],
   );
   static final ThemeData fluuiDarkTheme = ThemeData(
@@ -34,6 +35,7 @@ class FluuiTheme {
       FluuiTextTheme.dark(
         colorScheme: darkColorScheme,
       ),
+      FluuiColorTheme.dark(),
     ],
   );
 

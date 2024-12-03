@@ -265,7 +265,7 @@ class FluuiColorTheme extends ThemeExtension<FluuiColorTheme> {
   factory FluuiColorTheme.light() {
     return FluuiColorTheme(
       colorScheme: ColorScheme.light(
-        primary: UiColors.blue[500]!,
+        primary: UiColors.gray[800]!,
         onPrimary: Colors.white,
         secondary: UiColors.purple[500]!,
         onSecondary: Colors.white,
@@ -401,7 +401,7 @@ class FluuiColorTheme extends ThemeExtension<FluuiColorTheme> {
   factory FluuiColorTheme.dark() {
     return FluuiColorTheme(
       colorScheme: ColorScheme.dark(
-        primary: UiColors.blue[200]!,
+        primary: UiColors.whiteAlpha[900]!,
         onPrimary: UiColors.gray[900]!,
         secondary: UiColors.purple[200]!,
         onSecondary: UiColors.gray[900]!,

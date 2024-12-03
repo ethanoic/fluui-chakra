@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fluui_chakra/theme/theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 import 'package:fluui_chakra/fluui_chakra.dart';
@@ -11,8 +12,13 @@ const descriptionWidth = 140.0;
 const height = 50.0;
 const padding = 8.0;
 
-Widget buildColorBox(Color color, String name, String hex,
-    {List<BoxShadow>? shadow}) {
+Widget buildColorBox({
+  required BuildContext context,
+  required Color color,
+  required String name,
+  required String hex,
+  List<BoxShadow>? shadow,
+}) {
   return SizedBox(
     width: width + descriptionWidth + imagePaddingRight + padding * 2,
     height: height + padding * 2,
@@ -45,23 +51,15 @@ Widget buildColorBox(Color color, String name, String hex,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   verticalDirection: VerticalDirection.down,
                   children: [
-                    Text(
-                      name,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Inter',
-                        color: UiColors.black,
-                      ),
-                    ),
+                    Text(name,
+                        style: Theme.of(context)
+                            .extension<FluuiTextTheme>()!
+                            .componentHeadingSmallXs),
                     Text(
                       hex,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        fontFamily: 'Inter',
-                        color: UiColors.gray[500],
-                      ),
+                      style: Theme.of(context)
+                          .extension<FluuiTextTheme>()!
+                          .componentTextSm,
                     ),
                   ],
                 ),
@@ -74,7 +72,10 @@ Widget buildColorBox(Color color, String name, String hex,
   );
 }
 
-Widget buildColorGroupHeader(String text) {
+Widget buildColorGroupHeader({
+  required BuildContext context,
+  required String text,
+}) {
   return Padding(
     padding: const EdgeInsets.only(
       bottom: 24,
@@ -98,7 +99,10 @@ Widget buildColorGroup(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          child: buildColorGroupHeader(text),
+          child: buildColorGroupHeader(
+            context: context,
+            text: text,
+          ),
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width,
@@ -109,9 +113,10 @@ Widget buildColorGroup(
             children: colors
                 .map(
                   (color) => buildColorBox(
-                    color['color'] as Color,
-                    color['name'] as String,
-                    color['hex'] as String,
+                    context: context,
+                    color: color['color'] as Color,
+                    name: color['name'] as String,
+                    hex: color['hex'] as String,
                     shadow: color['shadow'] as List<BoxShadow>?,
                   ),
                 )

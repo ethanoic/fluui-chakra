@@ -1,49 +1,41 @@
 import 'package:flutter/material.dart';
-
-import 'accordion_button.dart';
-import 'accordion_content.dart';
+import 'models/accordion_item_entry.dart';
+import 'accordion_item.dart';
 
 class Accordion extends StatefulWidget {
-  const Accordion({
-    super.key,
-    required this.label,
-    required this.child,
-  });
+  const Accordion({super.key, required this.items});
 
-  final String label;
-  final Widget child;
+  final List<AccordionItemEntry> items;
 
   @override
   State<Accordion> createState() => _AccordionState();
 }
 
 class _AccordionState extends State<Accordion> {
-  bool isOpen = false;
+  int activeIndex = -1;
+
   @override
-  Widget build(
-    BuildContext context,
-  ) {
+  Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(
-        16,
-      ),
+      padding: const EdgeInsets.all(16),
       child: Column(
-        children: [
-          AccordionButton(
-            label: widget.label,
-            isOpen: isOpen,
-            onPressed: () {
+        children: widget.items.asMap().entries.map((entry) {
+          return AccordionItem(
+            index: entry.key,
+            label: entry.value.label,
+            isOpened: entry.key == activeIndex,
+            onOpen: () {
               setState(() {
-                isOpen = !isOpen;
+                if (entry.key == activeIndex) {
+                  activeIndex = -1;
+                } else {
+                  activeIndex = entry.key;
+                }
               });
             },
-          ),
-          if (isOpen)
-            AccordionContent(
-              child: widget.child,
-            ),
-        ],
+            child: entry.value.child,
+          );
+        }).toList(),
       ),
     );
   }

@@ -32,13 +32,14 @@ final iconsList = [
 ];
 
 Widget buildIcon({
+  required BuildContext context,
   required IconData icon,
   required String name,
 }) {
   return Container(
     padding: const EdgeInsets.all(8),
     width: 150,
-    height: 150,
+    height: 160,
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -58,9 +59,9 @@ Widget buildIcon({
         Center(
           child: SelectableText(
             name,
-            style: ComponentText.xs.copyWith(
-              color: UiColors.blackAlpha[800]!,
-            ),
+            style: Theme.of(context)
+                .extension<FluuiTextTheme>()!
+                .mdLineHeight6Normal,
           ),
         ),
       ],
@@ -86,6 +87,7 @@ Widget buildIcons(BuildContext context) {
         runSpacing: 36,
         children: iconsList
             .map((e) => buildIcon(
+                  context: context,
                   icon: e.$1,
                   name: e.$2,
                 ))

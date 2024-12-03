@@ -6,17 +6,35 @@ import '../../utils.dart';
 
 void main() {
   testWidgets(
-    'Accordion',
+    'Should render an accordion with multiple items',
     (tester) async {
+      const items = [
+        fluui_chakra.AccordionItemEntry(
+          label: 'Item 1',
+          child: Text('Hello world'),
+        ),
+        fluui_chakra.AccordionItemEntry(
+          label: 'Item 2',
+          child: Text('Hello accordion'),
+        )
+      ];
+
       await tester.pumpWidget(
         buildTestableWidget(
           const fluui_chakra.Accordion(
-            label: 'Accordion',
-            child: Text('Content'),
+            items: items,
           ),
         ),
       );
-      expect(find.text('Content'), findsOneWidget);
+
+      expect(
+        find.text('Item 1'),
+        findsOneWidget,
+      );
+      expect(
+        find.text('Item 2'),
+        findsOneWidget,
+      );
     },
   );
 }

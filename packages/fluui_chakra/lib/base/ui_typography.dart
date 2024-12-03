@@ -117,6 +117,286 @@ class TextStyles {
     fontSize: UiTypography.sm,
     height: UiTypography.lineHeight5,
   );
+
+  static const mdLineHeight6Normal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.md,
+    height: UiTypography.lineHeight6,
+  );
+
+  static const mdLineHeight6Medium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.md,
+    height: UiTypography.lineHeight6,
+  );
+
+  static const mdLineHeight6Semibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.md,
+    height: UiTypography.lineHeight6,
+  );
+
+  static const mdLineHeight6Bold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.md,
+    height: UiTypography.lineHeight6,
+  );
+
+  static const mdLineHeight6ExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.md,
+    height: UiTypography.lineHeight6,
+  );
+
+  static const lgLineHeight7Normal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.lg,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const lgLineHeight7Medium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.lg,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const lgLineHeight7Semibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.lg,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const lgLineHeight7Bold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.lg,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const lgLineHeight7ExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.lg,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const xlLineHeight7Normal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.xl,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const xlLineHeight7Medium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.xl,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const xlLineHeight7Semibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.xl,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const xlLineHeight7Bold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.xl,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const xlLineHeight7ExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.xl,
+    height: UiTypography.lineHeight7,
+  );
+
+  static const xxlLineHeight8Normal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.xxl,
+    height: UiTypography.lineHeight8,
+  );
+
+  static const xxlLineHeight8Medium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.xxl,
+    height: UiTypography.lineHeight8,
+  );
+
+  static const xxlLineHeight8Semibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.xxl,
+    height: UiTypography.lineHeight8,
+  );
+
+  static const xxlLineHeight8Bold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.xxl,
+    height: UiTypography.lineHeight8,
+  );
+
+  static const xxlLineHeight8ExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.xxl,
+    height: UiTypography.lineHeight8,
+  );
+
+  static const xxxlLineHeight9Normal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.xxxl,
+    height: UiTypography.lineHeight9,
+  );
+
+  static const xxxlLineHeight9Medium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.xxxl,
+    height: UiTypography.lineHeight9,
+  );
+
+  static const xxxlLineHeight9Semibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.xxxl,
+    height: UiTypography.lineHeight9,
+  );
+
+  static const xxxlLineHeight9Bold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.xxxl,
+    height: UiTypography.lineHeight9,
+  );
+
+  static const xxxlLineHeight9ExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.xxxl,
+    height: UiTypography.lineHeight9,
+  );
+
+  static const xxxxlLineHeight10Normal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.xxxxl,
+    height: UiTypography.lineHeight10,
+  );
+
+  static const xxxxlLineHeight10Medium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.xxxxl,
+    height: UiTypography.lineHeight10,
+  );
+
+  static const xxxxlLineHeight10Semibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.xxxxl,
+    height: UiTypography.lineHeight10,
+  );
+
+  static const xxxxlLineHeight10Bold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.xxxxl,
+    height: UiTypography.lineHeight10,
+  );
+
+  static const xxxxlLineHeight10ExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.xxxxl,
+    height: UiTypography.lineHeight10,
+  );
+
+  static const xxxxxlLineHeightNoneNormal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.xxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxlLineHeightNoneMedium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.xxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxlLineHeightNoneSemibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.xxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxlLineHeightNoneBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.xxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxlLineHeightNoneExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.xxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxxlLineHeightNoneNormal = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightNormal],
+    fontSize: UiTypography.xxxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxxlLineHeightNoneMedium = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightMedium],
+    fontSize: UiTypography.xxxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxxlLineHeightNoneSemibold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightSemibold],
+    fontSize: UiTypography.xxxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxxlLineHeightNoneBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightBold],
+    fontSize: UiTypography.xxxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
+
+  static const xxxxxxlLineHeightNoneExtraBold = TextStyle(
+    fontFamily: UiTypography.fontFamily,
+    fontVariations: [UiTypography.fontWeightExtraBold],
+    fontSize: UiTypography.xxxxxxl,
+    height: UiTypography.lineHeightNone,
+  );
 }
 
 class ComponentHeadingLarge {
