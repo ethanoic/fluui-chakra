@@ -46,7 +46,10 @@ class _AccordionContentState extends State<AccordionContent>
     return Container(
       width: double.infinity,
       child: SizeTransition(
-        sizeFactor: _controller,
+        sizeFactor: CurvedAnimation(
+          parent: _controller,
+          curve: Curves.easeInOut,
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
             vertical: 16,
