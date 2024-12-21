@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fluui_chakra/theme/theme.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 import 'package:fluui_chakra/fluui_chakra.dart';

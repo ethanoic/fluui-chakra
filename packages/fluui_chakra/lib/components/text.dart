@@ -29,5 +29,5 @@ class FluuiHeading1 extends StatelessWidget {
 
 // Usage example:
 Widget build(BuildContext context) {
-  return FluuiHeading1('My Heading');
+  return const FluuiHeading1('My Heading');
 }
