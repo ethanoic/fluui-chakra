@@ -132,6 +132,7 @@ class Alert extends StatelessWidget {
       ),
       child: Flex(
         direction: Axis.horizontal,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.only(
@@ -147,6 +148,8 @@ class Alert extends StatelessWidget {
             child: Flex(
               direction: Axis.vertical,
               mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 titleText,
                 descriptionText,
