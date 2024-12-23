@@ -6,47 +6,28 @@ enum ButtonVariant {
   outline,
 }
 
-enum ButtonSize {
-  xs,
-  sm,
-  md,
-  lg,
-}
-
-enum ButtonColorScheme {
-  blue,
-  gray,
-  teal,
-  red,
-  orange,
-  yellow,
-  pink,
-  purple,
-  green,
-}
-
 class Button extends StatelessWidget {
   final String label;
   final ButtonVariant variant;
-  final ButtonSize size;
-  final ButtonColorScheme colorScheme;
+  final FluuiSize size;
+  final FluuiColorScheme colorScheme;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
-
+  final VoidCallback? onPressed;
   Color getColorMap({
     required FluuiColorTheme? theme,
-    required ButtonColorScheme colorScheme,
+    required FluuiColorScheme colorScheme,
   }) {
     final colorMap = {
-      ButtonColorScheme.blue: theme?.blue500 ?? Colors.blue,
-      ButtonColorScheme.gray: theme?.gray500 ?? Colors.grey,
-      ButtonColorScheme.teal: theme?.teal500 ?? Colors.teal,
-      ButtonColorScheme.red: theme?.red500 ?? Colors.red,
-      ButtonColorScheme.orange: theme?.orange500 ?? Colors.orange,
-      ButtonColorScheme.yellow: theme?.yellow500 ?? Colors.yellow,
-      ButtonColorScheme.pink: theme?.pink500 ?? Colors.pink,
-      ButtonColorScheme.purple: theme?.purple500 ?? Colors.purple,
-      ButtonColorScheme.green: theme?.green500 ?? Colors.green,
+      FluuiColorScheme.blue: theme?.blue500 ?? Colors.blue,
+      FluuiColorScheme.gray: theme?.gray500 ?? Colors.grey,
+      FluuiColorScheme.teal: theme?.teal500 ?? Colors.teal,
+      FluuiColorScheme.red: theme?.red500 ?? Colors.red,
+      FluuiColorScheme.orange: theme?.orange500 ?? Colors.orange,
+      FluuiColorScheme.yellow: theme?.yellow500 ?? Colors.yellow,
+      FluuiColorScheme.pink: theme?.pink500 ?? Colors.pink,
+      FluuiColorScheme.purple: theme?.purple500 ?? Colors.purple,
+      FluuiColorScheme.green: theme?.green500 ?? Colors.green,
     };
     return colorMap[colorScheme]!;
   }
@@ -54,26 +35,26 @@ class Button extends StatelessWidget {
   Map<String, dynamic> getButtonStyle({
     required FluuiTextTheme? textTheme,
     required FluuiColorTheme? colorTheme,
-    required ButtonSize size,
+    required FluuiSize size,
     required ButtonVariant variant,
-    required ButtonColorScheme colorScheme,
+    required FluuiColorScheme colorScheme,
   }) {
     final Map<String, dynamic> style = {};
 
     final sizeMap = {
-      ButtonSize.xs: const EdgeInsets.symmetric(
+      FluuiSize.xs: const EdgeInsets.symmetric(
         horizontal: 8,
         vertical: 4,
       ),
-      ButtonSize.sm: const EdgeInsets.symmetric(
+      FluuiSize.sm: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 6,
       ),
-      ButtonSize.md: const EdgeInsets.symmetric(
+      FluuiSize.md: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 8,
       ),
-      ButtonSize.lg: const EdgeInsets.symmetric(
+      FluuiSize.lg: const EdgeInsets.symmetric(
         horizontal: 24,
         vertical: 10,
       ),
@@ -95,7 +76,7 @@ class Button extends StatelessWidget {
   BoxDecoration getDecoration({
     required FluuiColorTheme? theme,
     required ButtonVariant variant,
-    required ButtonColorScheme colorScheme,
+    required FluuiColorScheme colorScheme,
   }) {
     final variantMap = {
       ButtonVariant.solid: BoxDecoration(
@@ -116,7 +97,7 @@ class Button extends StatelessWidget {
   Decoration getForegroundDecoration({
     required FluuiColorTheme? theme,
     required ButtonVariant variant,
-    required ButtonColorScheme colorScheme,
+    required FluuiColorScheme colorScheme,
   }) {
     final variantMap = {
       ButtonVariant.outline: BoxDecoration(
@@ -134,27 +115,39 @@ class Button extends StatelessWidget {
     return variantMap[variant] ?? const BoxDecoration();
   }
 
+  Color getForegroundColor({
+    required FluuiColorTheme? theme,
+    required ButtonVariant variant,
+    required FluuiColorScheme colorScheme,
+  }) {
+    return variant == ButtonVariant.outline
+        ? getColorMap(
+            theme: theme,
+            colorScheme: colorScheme,
+          )
+        : Colors.white;
+  }
+
   TextStyle getTextStyle({
     required FluuiColorTheme? colorTheme,
     required FluuiTextTheme? textTheme,
-    required ButtonSize size,
+    required FluuiSize size,
     required ButtonVariant variant,
-    required ButtonColorScheme colorScheme,
+    required FluuiColorScheme colorScheme,
   }) {
     final textStyleMap = {
-      ButtonSize.xs: textTheme?.xsLineHeight4Semibold ?? const TextStyle(),
-      ButtonSize.sm: textTheme?.smLineHeight5Semibold ?? const TextStyle(),
-      ButtonSize.md: textTheme?.mdLineHeight6Semibold ?? const TextStyle(),
-      ButtonSize.lg: textTheme?.lgLineHeight7Semibold ?? const TextStyle(),
+      FluuiSize.xs: textTheme?.xsLineHeight4Semibold ?? const TextStyle(),
+      FluuiSize.sm: textTheme?.smLineHeight5Semibold ?? const TextStyle(),
+      FluuiSize.md: textTheme?.mdLineHeight6Semibold ?? const TextStyle(),
+      FluuiSize.lg: textTheme?.lgLineHeight7Semibold ?? const TextStyle(),
     };
 
     return (textStyleMap[size] ?? const TextStyle()).copyWith(
-      color: variant == ButtonVariant.outline
-          ? getColorMap(
-              theme: colorTheme,
-              colorScheme: colorScheme,
-            )
-          : Colors.white,
+      color: getForegroundColor(
+        theme: colorTheme,
+        variant: variant,
+        colorScheme: colorScheme,
+      ),
     );
   }
 
@@ -166,6 +159,7 @@ class Button extends StatelessWidget {
     required this.colorScheme,
     this.prefixIcon,
     this.suffixIcon,
+    this.onPressed,
   });
 
   @override
@@ -181,43 +175,66 @@ class Button extends StatelessWidget {
       colorScheme: colorScheme,
     );
 
-    return Container(
-      padding: containerStyle['padding'] as EdgeInsets?,
-      decoration: getDecoration(
-        theme: colorTheme,
-        variant: variant,
-        colorScheme: colorScheme,
-      ),
-      foregroundDecoration: getForegroundDecoration(
-        theme: colorTheme,
-        variant: variant,
-        colorScheme: colorScheme,
-      ),
-      child: Flex(
-        direction: Axis.horizontal,
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (prefixIcon != null) ...[
-            Icon(prefixIcon),
-          ],
-          Flex(
-            direction: Axis.vertical,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                label,
-                style: containerStyle['text'] as TextStyle?,
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        padding: containerStyle['padding'] as EdgeInsets?,
+        decoration: getDecoration(
+          theme: colorTheme,
+          variant: variant,
+          colorScheme: colorScheme,
+        ),
+        foregroundDecoration: getForegroundDecoration(
+          theme: colorTheme,
+          variant: variant,
+          colorScheme: colorScheme,
+        ),
+        child: Flex(
+          direction: Axis.horizontal,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            if (prefixIcon != null) ...[
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Icon(
+                  prefixIcon,
+                  color: getForegroundColor(
+                    theme: colorTheme,
+                    variant: variant,
+                    colorScheme: colorScheme,
+                  ),
+                ),
               ),
             ],
-          ),
-          if (suffixIcon != null) ...[
-            Icon(suffixIcon),
+            Flex(
+              direction: Axis.vertical,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  label,
+                  style: containerStyle['text'] as TextStyle?,
+                ),
+              ],
+            ),
+            if (suffixIcon != null) ...[
+              Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Icon(
+                  suffixIcon,
+                  color: getForegroundColor(
+                    theme: colorTheme,
+                    variant: variant,
+                    colorScheme: colorScheme,
+                  ),
+                ),
+              ),
+            ],
           ],
-        ],
+        ),
       ),
     );
   }

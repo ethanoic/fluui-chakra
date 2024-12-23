@@ -114,7 +114,6 @@ class Alert extends StatelessWidget {
     );
 
     return Container(
-      width: 400.0,
       margin: const EdgeInsets.all(8.0),
       padding: const EdgeInsets.symmetric(
         horizontal: 16.0,

@@ -57,13 +57,13 @@ Widget buildButton(BuildContext context) {
         label: 'Variant',
         options: fluui_chakra.ButtonVariant.values,
       ),
-      size: context.knobs.list(
+      size: context.knobs.list<fluui_chakra.FluuiSize>(
         label: 'Size',
-        options: fluui_chakra.ButtonSize.values,
+        options: fluui_chakra.FluuiSize.values,
       ),
-      colorScheme: context.knobs.list(
+      colorScheme: context.knobs.list<fluui_chakra.FluuiColorScheme>(
         label: 'Color Scheme',
-        options: fluui_chakra.ButtonColorScheme.values,
+        options: fluui_chakra.FluuiColorScheme.values,
       ),
     ),
   );
