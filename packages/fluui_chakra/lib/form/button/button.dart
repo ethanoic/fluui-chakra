@@ -182,10 +182,7 @@ class Button extends StatelessWidget {
         padding: containerStyle['padding'] as EdgeInsets?,
         textStyle: containerStyle['text'] as TextStyle?,
         backgroundColor: getBackgroundColor(
-          theme: colorTheme,
-          variant: variant,
-          colorScheme: colorSche
-        ),
+            theme: colorTheme, variant: variant, colorScheme: colorScheme),
         foregroundColor: getForegroundColor(
           theme: colorTheme,
           variant: variant,
