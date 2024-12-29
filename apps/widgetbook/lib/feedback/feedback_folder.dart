@@ -1,5 +1,6 @@
 import 'package:widgetbook/widgetbook.dart';
 import 'alert.dart';
+import 'progress.dart';
 
 final feedbackFolder = WidgetbookFolder(
   name: 'Feedback',
@@ -9,6 +10,13 @@ final feedbackFolder = WidgetbookFolder(
       useCase: WidgetbookUseCase(
         name: 'Alert',
         builder: buildAlert,
+      ),
+    ),
+    WidgetbookLeafComponent(
+      name: 'Progress',
+      useCase: WidgetbookUseCase(
+        name: 'Progress',
+        builder: buildProgress,
       ),
     ),
   ],

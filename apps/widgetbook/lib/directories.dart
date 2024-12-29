@@ -5,6 +5,7 @@ import 'data/export_data.dart';
 import 'disclosure/export_disclosure.dart';
 import 'feedback/export_feedback.dart';
 import 'form/export_form.dart';
+import 'overlay/export_overlay.dart';
 
 final directories = <WidgetbookNode>[
   baseFolder,
@@ -12,4 +13,5 @@ final directories = <WidgetbookNode>[
   disclosureFolder,
   feedbackFolder,
   formFolder,
+  overlayFolder,
 ];

@@ -41,6 +41,7 @@ extension IconDataKnob on KnobsBuilder {
 Widget buildButton(BuildContext context) {
   return Center(
     child: fluui_chakra.Button(
+      onPressed: () {},
       label: context.knobs.string(
         label: 'Label',
         initialValue: 'Button',

@@ -14,6 +14,7 @@ class Button extends StatelessWidget {
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final VoidCallback? onPressed;
+
   Color getColorMap({
     required FluuiColorTheme? theme,
     required FluuiColorScheme colorScheme,
@@ -73,46 +74,17 @@ class Button extends StatelessWidget {
     return style;
   }
 
-  BoxDecoration getDecoration({
+  Color getBackgroundColor({
     required FluuiColorTheme? theme,
     required ButtonVariant variant,
     required FluuiColorScheme colorScheme,
   }) {
-    final variantMap = {
-      ButtonVariant.solid: BoxDecoration(
-        color: getColorMap(
-          theme: theme,
-          colorScheme: colorScheme,
-        ),
-        borderRadius: BorderRadius.circular(6),
-      ),
-      ButtonVariant.outline: BoxDecoration(
-        borderRadius: BorderRadius.circular(6),
-      )
-    };
-
-    return variantMap[variant]!;
-  }
-
-  Decoration getForegroundDecoration({
-    required FluuiColorTheme? theme,
-    required ButtonVariant variant,
-    required FluuiColorScheme colorScheme,
-  }) {
-    final variantMap = {
-      ButtonVariant.outline: BoxDecoration(
-        border: Border.all(
-          color: getColorMap(
+    return variant == ButtonVariant.solid
+        ? getColorMap(
             theme: theme,
             colorScheme: colorScheme,
-          ),
-          width: 1,
-        ),
-        borderRadius: BorderRadius.circular(6),
-      )
-    };
-
-    return variantMap[variant] ?? const BoxDecoration();
+          )
+        : Colors.transparent;
   }
 
   Color getForegroundColor({
@@ -126,6 +98,27 @@ class Button extends StatelessWidget {
             colorScheme: colorScheme,
           )
         : Colors.white;
+  }
+
+  OutlinedBorder getShape({
+    required FluuiColorTheme? theme,
+    required ButtonVariant variant,
+    required FluuiColorScheme colorScheme,
+  }) {
+    return variant == ButtonVariant.solid
+        ? RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(6),
+          )
+        : RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(6),
+            side: BorderSide(
+              color: getColorMap(
+                theme: theme,
+                colorScheme: colorScheme,
+              ),
+              width: 1,
+            ),
+          );
   }
 
   TextStyle getTextStyle({
@@ -175,66 +168,76 @@ class Button extends StatelessWidget {
       colorScheme: colorScheme,
     );
 
-    return GestureDetector(
-      onTap: onPressed,
-      child: Container(
+    return TextButton(
+      style: TextButton.styleFrom(
+        shape: getShape(
+          theme: colorTheme,
+          variant: variant,
+          colorScheme: colorScheme,
+        ),
+        visualDensity: const VisualDensity(
+          horizontal: 1.0,
+          vertical: -0.5,
+        ),
         padding: containerStyle['padding'] as EdgeInsets?,
-        decoration: getDecoration(
+        textStyle: containerStyle['text'] as TextStyle?,
+        backgroundColor: getBackgroundColor(
+          theme: colorTheme,
+          variant: variant,
+          colorScheme: colorSche
+        ),
+        foregroundColor: getForegroundColor(
           theme: colorTheme,
           variant: variant,
           colorScheme: colorScheme,
         ),
-        foregroundDecoration: getForegroundDecoration(
-          theme: colorTheme,
-          variant: variant,
-          colorScheme: colorScheme,
-        ),
-        child: Flex(
-          direction: Axis.horizontal,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (prefixIcon != null) ...[
-              Padding(
-                padding: const EdgeInsets.only(right: 8),
-                child: Icon(
-                  prefixIcon,
-                  color: getForegroundColor(
-                    theme: colorTheme,
-                    variant: variant,
-                    colorScheme: colorScheme,
-                  ),
+      ),
+      onPressed: onPressed,
+      child: Flex(
+        direction: Axis.horizontal,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (prefixIcon != null) ...[
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Icon(
+                prefixIcon,
+                color: getForegroundColor(
+                  theme: colorTheme,
+                  variant: variant,
+                  colorScheme: colorScheme,
                 ),
               ),
-            ],
-            Flex(
-              direction: Axis.vertical,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  label,
-                  style: containerStyle['text'] as TextStyle?,
-                ),
-              ],
             ),
-            if (suffixIcon != null) ...[
-              Padding(
-                padding: const EdgeInsets.only(left: 8),
-                child: Icon(
-                  suffixIcon,
-                  color: getForegroundColor(
-                    theme: colorTheme,
-                    variant: variant,
-                    colorScheme: colorScheme,
-                  ),
-                ),
+          ],
+          Flex(
+            direction: Axis.vertical,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                label,
+                style: containerStyle['text'] as TextStyle?,
               ),
             ],
+          ),
+          if (suffixIcon != null) ...[
+            Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: Icon(
+                suffixIcon,
+                color: getForegroundColor(
+                  theme: colorTheme,
+                  variant: variant,
+                  colorScheme: colorScheme,
+                ),
+              ),
+            ),
           ],
-        ),
+        ],
       ),
     );
   }
